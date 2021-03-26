@@ -106,7 +106,7 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
         $billingAddress = $order->getBillingAddress();
 
         //Add shipping_address
-        if ($shippingAddress) { 
+        if ($shippingAddress) {
             $postArray['shipping_address']['name'] = $shippingAddress->getName();
             $postArray['shipping_address']['street'] = $shippingAddress->getStreetFull();
             $postArray['shipping_address']['city'] = $shippingAddress->getCity();
@@ -143,12 +143,12 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
 
         //Add order items to basket array
         foreach ($order->getAllVisibleItems() as $item) {
-            $price = ($item->getBasePriceInclTax() - $item->getDiscountAmount()) * 100;
+            $price = round(($item->getBasePriceInclTax() - $item->getDiscountAmount()), 2) * 100;
             $product = array(
                 'qty'        => (int) $item->getQtyOrdered(),
                 'item_no'    => $item->getSku(),
                 'item_name'  => $item->getName(),
-                'item_price' => round($price),
+                'item_price' => strval($price),
                 'vat_rate'   => $item->getTaxPercent() / 100,
             );
 
@@ -161,6 +161,7 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
 
         $storeId = Mage::app()->getStore()->getStoreId();
         $this->apiKey = Mage::getStoreConfig('payment/unzerdirect_payment/apikey', $storeId);
+
         $result = $this->request('payments', $postArray, '');
         $result = json_decode($result);
 
@@ -193,12 +194,12 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
 
         //Add order items to basket array
         foreach ($order->getAllVisibleItems() as $item) {
-            $price = ($item->getBasePriceInclTax() - $item->getDiscountAmount()) * 100;
+            $price = round(($item->getBasePriceInclTax() - $item->getDiscountAmount()), 2) * 100;
             $product = array(
                 'qty'        => (int) $item->getQtyOrdered(),
                 'item_no'    => $item->getSku(),
                 'item_name'  => $item->getName(),
-                'item_price' => round($price),
+                'item_price' => strval($price),
                 'vat_rate'   => $item->getTaxPercent() / 100,
             );
 
@@ -665,7 +666,7 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
      * @return string
      */
     public function getModuleVersion(){
-        $module = 'Unzerdirect_Payment';
+        $module = 'UnzerDirect_Payment';
         $configFile = Mage::getConfig()->getModuleDir('etc', $module).DS.'config.xml';
         $string = file_get_contents($configFile);
         if($string){

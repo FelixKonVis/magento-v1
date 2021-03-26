@@ -1,13 +1,13 @@
 <?php
-/** @var Quickpay_Payment_Block_Payment_Redirect $this */
-/** @var Quickpay_Payment_Model_Payment $payment */
-$payment = Mage::getModel('quickpaypayment/payment');
+/** @var UnzerDirect_Payment_Block_Payment_Redirect $this */
+/** @var UnzerDirect_Payment_Model_Payment $payment */
+$payment = Mage::getModel('unzerdirect_payment/payment');
 
 $order = $this->getOrder();
-$quickpay_state = Mage::getSingleton('core/session')->getQuickpayState();
+$unzerdirect_state = Mage::getSingleton('core/session')->getUnzerDirectState();
 
 // Get array of selections
-if (isset($quickpay_state[0]) && $quickpay_state[0] == 'checkbox1') {
+if (isset($unzerdirect_state[0]) && $unzerdirect_state[0] == 'checkbox1') {
     $brandingId = $payment->getConfigData('brandingidchecked');
 } else {
     $brandingId = $payment->getConfigData('brandingid');
@@ -15,7 +15,7 @@ if (isset($quickpay_state[0]) && $quickpay_state[0] == 'checkbox1') {
 
 $parameters = array(
     "agreement_id"                 => $payment->getConfigData("agreementid"),
-    "amount"                       => $order->getTotalDue() * 100,
+    "amount"                       => strval(round($order->getTotalDue(), 2) * 100),
     "continueurl"                  => $this->getSuccessUrl(),
     "cancelurl"                    => $this->getCancelUrl(),
     "callbackurl"                  => $this->getCallbackUrl(),
@@ -29,8 +29,8 @@ $parameters = array(
     "customer_email"               => $order->getCustomerEmail() ?: '',
 );
 
-$result = Mage::helper('quickpaypayment')->qpCreatePayment($order);
-$result = Mage::helper('quickpaypayment')->qpCreatePaymentLink($result->id, $parameters);
+$result = Mage::helper('unzerdirect_payment')->qpCreatePayment($order);
+$result = Mage::helper('unzerdirect_payment')->qpCreatePaymentLink($result->id, $parameters);
 
 $paymentUrl = $result->url;
 ?>
