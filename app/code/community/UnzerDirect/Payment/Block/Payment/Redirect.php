@@ -1,5 +1,5 @@
 <?php
-class UnzerDirectPayment_Block_Payment_Redirect extends Mage_Core_Block_Template
+class UnzerDirect_Payment_Block_Payment_Redirect extends Mage_Core_Block_Template
 {
     public function __construct()
     {

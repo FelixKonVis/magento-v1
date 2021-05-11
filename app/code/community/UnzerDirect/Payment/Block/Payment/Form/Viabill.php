@@ -35,6 +35,6 @@ class UnzerDirect_Payment_Block_Payment_Form_Viabill extends Mage_Payment_Block_
      */
     public function getMethodLabelAfterHtml()
     {
-        return sprintf('<img src="%s" height="20" alt="ViaBill"/>', $this->getSkinUrl('images/unzerdirect/viabill.png'));
+        return sprintf('<img src="%s" height="20" alt="ViaBill"/>', $this->getSkinUrl('images/unzerdirectpayment/viabill.png'));
     }
 }

@@ -1,5 +1,5 @@
 <?php
-$payment = Mage::getModel('quickpaypayment/payment');
+$payment = Mage::getModel('unzerdirect_payment/payment');
 ?>
 <?php $_code = $this->getMethodCode() ?>
 <ul id="payment_form_<?php echo $_code ?>" style="display:none">
@@ -10,14 +10,14 @@ $payment = Mage::getModel('quickpaypayment/payment');
             <?php if ($payment->getConfigData('transactionfee')) : ?>
             <br>
             <br>
-            <?php echo Mage::getStoreConfig('payment/quickpaypayment_payment/transactionfee_description', Mage::app()->getStore()->getStoreId()) ?>
+            <?php echo Mage::getStoreConfig('payment/unzerdirect_payment/transactionfee_description', Mage::app()->getStore()->getStoreId()) ?>
 
             <?php endif; ?>
             <?php endif; ?>
             <br/>
             <?php if ($payment->getConfigData('brandingidchecked')!='') : ?>
             <br/>
-            <input type="checkbox" name="quickpay_state[]" value="checkbox1"> <?php echo $this->__($payment->getConfigData('brandingidcheckedtext'));?><br/>
+            <input type="checkbox" name="unzerdirect_state[]" value="checkbox1"> <?php echo $this->__($payment->getConfigData('brandingidcheckedtext'));?><br/>
             <?php endif; ?>
         </div>
     </li>

@@ -1,5 +1,5 @@
 <?php
-class UnzerDirect_Payment_Block_Info_UnzerDirect extends Mage_Payment_Block_Info
+class UnzerDirect_Payment_Block_Info_Unzerdirect extends Mage_Payment_Block_Info
 {
     protected function _construct()
     {
@@ -19,7 +19,7 @@ class UnzerDirect_Payment_Block_Info_UnzerDirect extends Mage_Payment_Block_Info
             $read = Mage::getSingleton('core/resource')->getConnection('core_read');
 
             $resource = Mage::getSingleton('core/resource');
-            $table = $resource->getTableName('unzerdirectpayment_order_status');
+            $table = $resource->getTableName('unzerdirect_payment_order_status');
 
             $query = "SELECT qpstat, transaction, cardtype, cardnumber, acquirer, is_3d_secure, currency FROM {$table} WHERE ordernum = :order_number";
             $binds = array(

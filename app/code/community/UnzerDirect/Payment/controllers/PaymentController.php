@@ -116,13 +116,6 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
             // Save the order into the unzerdirect_payment_order_status table
             // IMPORTANT to update the status as 1 to ensure that the stock is handled correctly!
             if ($request->accepted && $operation->type == 'authorize') {
-                if($request->facilitator == 'mobilepay'){
-                    $order = $this->updateOrderByCallback($order, $request);
-
-                    $order->addStatusHistoryComment(Mage::helper('unzerdirect_payment')->__('Order was created from MobilePay Checkout'))
-                        ->setIsCustomerNotified(false)
-                        ->save();
-                }
 
                 if ($operation->pending == true) {
                     Mage::log('Transaction accepted but pending', null, 'qp_callback.log');
@@ -204,6 +197,8 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
 
                 $payment = Mage::getModel('unzerdirect_payment/payment');
 
+                Mage::log($order->getStatus(), null, 'qp_callback.log');
+                Mage::log($payment->getConfigData('order_status_after_payment'), null, 'qp_callback.log');
                 if ($order->getStatus() != $payment->getConfigData('order_status_after_payment')) {
                     $order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, $payment->getConfigData('order_status_after_payment'));
                     $order->save();
@@ -333,8 +328,6 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
      * @param $data
      */
     public function updateOrderByCallback($order, $data){
-        Mage::log("start update mobilepay order", null, 'qp_callback.log');
-
         $shippingAddress = $data->shipping_address;
         $billingAddress = $data->invoice_address;
 

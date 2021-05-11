@@ -13,7 +13,7 @@ class UnzerDirect_Payment_Model_Observer
 
     public function addToStock($order)
     {
-        $payment = Mage::getModel('unzerdirectpayment/payment');
+        $payment = Mage::getModel('unzerdirect_payment/payment');
 
         if (((int)$payment->getConfigData('handlestock')) == 1) {
             $items = $order->getAllItems(); // Get all items from the order

@@ -130,9 +130,9 @@ abstract class UnzerDirect_Payment_Model_Method_Abstract extends Mage_Payment_Mo
 
         $controller = Mage::app()->getFrontController()->getAction();
         if($controller instanceof Mage_Adminhtml_Sales_Order_CreditmemoController) { // allow editing of qty in creditmemo
-            return true;
+                return true;
         } else if ($controller instanceof Mage_Adminhtml_Sales_Order_InvoiceController) { // allow editing of qty in invoice
-            return true;
+                return true;
         }
 
         return false;

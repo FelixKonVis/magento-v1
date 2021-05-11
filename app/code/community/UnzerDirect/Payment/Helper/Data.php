@@ -106,7 +106,7 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
         $billingAddress = $order->getBillingAddress();
 
         //Add shipping_address
-        if ($shippingAddress) {
+        if ($shippingAddress) { 
             $postArray['shipping_address']['name'] = $shippingAddress->getName();
             $postArray['shipping_address']['street'] = $shippingAddress->getStreetFull();
             $postArray['shipping_address']['city'] = $shippingAddress->getCity();

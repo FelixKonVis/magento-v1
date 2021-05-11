@@ -30,7 +30,7 @@ div#adminhtml-fraudprobability-info span.arrow
   display: block;
   width: 10px;
   height: 20px;
-  background: url('../images/quickpaypayment/arrow.png');
+  background: url('../images/unzerdirectpayment/arrow.png');
   position: absolute;
   top: 50%;
   margin-top: -10px;
@@ -44,7 +44,7 @@ div#adminhtml-fraudprobability-info span.wait
   display: block;
   width: 35px;
   height: 35px;
-  background: url('../images/quickpaypayment/preloader.gif');
+  background: url('../images/unzerdirectpayment/preloader.gif');
   position: absolute;
   top: 50%;
   left:50%;
