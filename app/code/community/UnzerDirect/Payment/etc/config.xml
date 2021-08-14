@@ -2,7 +2,7 @@
 <config>
     <modules>
         <UnzerDirect_Payment>
-            <version>3.5.5</version>
+            <version>3.5.6</version>
         </UnzerDirect_Payment>
     </modules>
     <global>
@@ -122,11 +122,11 @@
             </modules>
         </translate>
         <layout>
-        <updates>
-            <unzerdirect_payment>
-                <file>UnzerDirect_Payment.xml</file>
-            </unzerdirect_payment>
-        </updates>
+            <updates>
+                <unzerdirect_payment>
+                    <file>UnzerDirect_Payment.xml</file>
+                </unzerdirect_payment>
+            </updates>
         </layout>
     </frontend>
     <admin>
@@ -206,6 +206,13 @@
                 <allowspecific>0</allowspecific>
                 <instructions>Pay with Klarna</instructions>
             </unzerdirect_klarna>
+            <unzerdirect_paypal>
+                <active>0</active>
+                <model>unzerdirect_payment/method_paypal</model>
+                <title>UnzerDirect Paypal</title>
+                <allowspecific>0</allowspecific>
+                <instructions>Pay with Paypal</instructions>
+            </unzerdirect_paypal>
         </payment>
     </default>
 </config>
