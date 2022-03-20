@@ -2,7 +2,7 @@
 <config>
     <modules>
         <UnzerDirect_Payment>
-            <version>3.5.8</version>
+            <version>3.5.9</version>
         </UnzerDirect_Payment>
     </modules>
     <global>
