@@ -2,7 +2,7 @@
 <config>
     <modules>
         <UnzerDirect_Payment>
-            <version>3.5.9</version>
+            <version>3.6.0</version>
         </UnzerDirect_Payment>
     </modules>
     <global>
@@ -213,6 +213,20 @@
                 <allowspecific>0</allowspecific>
                 <instructions>Pay with Paypal</instructions>
             </unzerdirect_paypal>
+            <unzerdirect_applepay>
+                <active>0</active>
+                <model>unzerdirect_payment/method_applepay</model>
+                <title>ApplePay</title>
+                <allowspecific>0</allowspecific>
+                <instructions>Pay with ApplePay</instructions>
+            </unzerdirect_applepay>
+            <unzerdirect_googlepay>
+                <active>0</active>
+                <model>unzerdirect_payment/method_googlepay</model>
+                <title>GooglePay</title>
+                <allowspecific>0</allowspecific>
+                <instructions>Pay with GooglePay</instructions>
+            </unzerdirect_googlepay>
         </payment>
     </default>
 </config>
