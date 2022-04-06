@@ -7,4 +7,20 @@
             <block type="page/html" name="redirect" template="unzerdirectpayment/payment/redirect.phtml"></block>
         </reference>
     </unzerdirect_payment_redirect>
+
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/unzerdirectpayment/styles.css</stylesheet>
+            </action>
+        </reference>
+    </checkout_onepage_index>
+
+    <onestepcheckout_index_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/unzerdirectpayment/styles.css</stylesheet>
+            </action>
+        </reference>
+    </onestepcheckout_index_index>
 </layout>

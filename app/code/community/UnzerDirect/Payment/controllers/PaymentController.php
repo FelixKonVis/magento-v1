@@ -17,6 +17,7 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
     public function redirectAction()
     {
         $session = $this->_getSession();
+        $quoteId = $session->getQuoteId();
 
         $incrementId = $session->getLastRealOrderId();
 
@@ -26,6 +27,11 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
 
         //Save quote id in session for retrieval later
         $session->setUnzerDirectQuoteId($session->getQuoteId());
+
+        if ($session->getQuoteId()) {
+            $quote = Mage::getModel('sales/quote')->load($quoteId);
+            $quote->setIsActive(true)->save();
+        }
 
         $block = Mage::getSingleton('core/layout')->createBlock('unzerdirect_payment/payment_redirect');
         $block->toHtml();
@@ -103,6 +109,12 @@ class UnzerDirect_Payment_PaymentController extends Mage_Core_Controller_Front_A
             Mage::log('Checksum ok', null, 'qp_callback.log');
 
             $order = Mage::getModel('sales/order')->loadByIncrementId((int)$request->order_id);
+
+            $quoteId = $order->getQuoteId();
+            if ($quoteId) {
+                $quote = Mage::getModel('sales/quote')->load($quoteId);
+                $quote->setIsActive(false)->save();
+            }
 
             $operation = end($request->operations);
 

@@ -1,7 +1,7 @@
 <?php
 class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    protected $apiUrl = "https://api.unzerdirect.com";
+    protected $apiUrl = "https://api.quickpay.net";
     protected $apiVersion = 'v10';
     protected $apiKey = "";
     // Loaded from the configuration
@@ -102,7 +102,8 @@ class UnzerDirect_Payment_Helper_Data extends Mage_Core_Helper_Abstract
             $postArray['text_on_statement'] = $textOnStatement;
         }
 
-        if($order->getPayment()->getMethod() != 'unzerdirect_paypal') {
+        if($order->getPayment()->getMethod() != 'unzerdirect_paypal'
+            && $order->getPayment()->getMethod() != 'unzerdirect_sofort') {
             $shippingAddress = $order->getShippingAddress();
             $billingAddress = $order->getBillingAddress();
 
