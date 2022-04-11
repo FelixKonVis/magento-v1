@@ -4,7 +4,7 @@
         <payment>
             <groups>
                 <unzerdirect_payment translate="label">
-                    <label>UnzerDirect Payment</label>
+                    <label>Unzer Direct Payment</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>50</sort_order>
                     <show_in_default>1</show_in_default>
@@ -292,7 +292,7 @@
                 </unzerdirect_payment>
                 <!-- Klarna -->
                 <unzerdirect_klarna>
-                    <label>UnzerDirect Klarna</label>
+                    <label>Unzer Direct Klarna</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>53</sort_order>
                     <show_in_default>1</show_in_default>
@@ -355,7 +355,7 @@
                 </unzerdirect_klarna>
                 <!-- Paypal -->
                 <unzerdirect_paypal>
-                    <label>UnzerDirect Paypal</label>
+                    <label>Unzer Direct Paypal</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>54</sort_order>
                     <show_in_default>1</show_in_default>
@@ -418,7 +418,7 @@
                 </unzerdirect_paypal>
                 <!-- ApplePay -->
                 <unzerdirect_applepay>
-                    <label>UnzerDirect ApplePay</label>
+                    <label>Unzer Direct ApplePay</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>55</sort_order>
                     <show_in_default>1</show_in_default>
@@ -481,7 +481,7 @@
                 </unzerdirect_applepay>
                 <!-- GooglePay -->
                 <unzerdirect_googlepay>
-                    <label>UnzerDirect GooglePay</label>
+                    <label>Unzer Direct GooglePay</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>56</sort_order>
                     <show_in_default>1</show_in_default>
@@ -544,7 +544,7 @@
                 </unzerdirect_googlepay>
                 <!-- Sofort -->
                 <unzerdirect_sofort>
-                    <label>UnzerDirect Sofort</label>
+                    <label>Unzer Direct Sofort</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>57</sort_order>
                     <show_in_default>1</show_in_default>
@@ -607,7 +607,7 @@
                 </unzerdirect_sofort>
                 <!-- Invoice -->
                 <unzerdirect_invoice>
-                    <label>Unzer Direct Invoice</label>
+                    <label>Unzer Invoice</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>58</sort_order>
                     <show_in_default>1</show_in_default>
