@@ -35,6 +35,6 @@ class UnzerDirect_Payment_Block_Payment_Form_Klarna extends Mage_Payment_Block_F
      */
     public function getMethodLabelAfterHtml()
     {
-        return sprintf('<img src="%s" height="20" alt="Klarna"/>', $this->getSkinUrl('images/unzerdirectpayment/klarna.png'));
+        return sprintf('<img src="%s" height="20" alt="Klarna"/>', $this->getSkinUrl('images/unzerdirectpayment/klarna.svg'));
     }
 }

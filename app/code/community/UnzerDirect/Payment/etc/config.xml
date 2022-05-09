@@ -2,7 +2,7 @@
 <config>
     <modules>
         <UnzerDirect_Payment>
-            <version>3.6.2</version>
+            <version>3.6.3</version>
         </UnzerDirect_Payment>
     </modules>
     <global>
@@ -180,7 +180,7 @@
         <payment>
             <unzerdirect_payment>
                 <model>unzerdirect_payment/method_payment</model>
-                <title>Kortbetaling</title>
+                <title>Credit card</title>
                 <active>1</active>
                 <testmode>0</testmode>
                 <order_status>pending</order_status>
@@ -193,7 +193,7 @@
                 <cardlogos>dankort,visa,mastercard,maestro</cardlogos>
                 <handlestock>1</handlestock>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with your credit card</instructions>
+                <instructions>Pay with Visa, Mastercard or Maestro card</instructions>
                 <instantcapture>0</instantcapture>
                 <instantinvoice>0</instantinvoice>
                 <transactionfee>0</transactionfee>
@@ -204,42 +204,66 @@
                 <model>unzerdirect_payment/method_klarna</model>
                 <title>Klarna</title>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with Klarna</instructions>
+                <sort_order>8</sort_order>
+                <instructions>Pay with Klarna Invoice, Klarna Direct Debit or Klarna Instalments</instructions>
             </unzerdirect_klarna>
             <unzerdirect_paypal>
                 <active>0</active>
                 <model>unzerdirect_payment/method_paypal</model>
                 <title>PayPal</title>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with Paypal</instructions>
+                <sort_order>7</sort_order>
+                <instructions>Pay with PayPal</instructions>
             </unzerdirect_paypal>
             <unzerdirect_applepay>
                 <active>0</active>
                 <model>unzerdirect_payment/method_applepay</model>
                 <title>Apple Pay</title>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with ApplePay</instructions>
+                <sort_order>5</sort_order>
+                <instructions>Pay with your Apple device</instructions>
             </unzerdirect_applepay>
             <unzerdirect_googlepay>
                 <active>0</active>
                 <model>unzerdirect_payment/method_googlepay</model>
                 <title>Google Pay</title>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with GooglePay</instructions>
+                <sort_order>4</sort_order>
+                <instructions>Pay with Google Pay</instructions>
             </unzerdirect_googlepay>
             <unzerdirect_sofort>
                 <active>0</active>
                 <model>unzerdirect_payment/method_sofort</model>
-                <title>Sofort</title>
+                <title>SOFORT</title>
                 <allowspecific>0</allowspecific>
-                <instructions>Pay with Sofort</instructions>
+                <sort_order>6</sort_order>
+                <instructions>Pay with SOFORT Banking</instructions>
             </unzerdirect_sofort>
             <unzerdirect_invoice>
                 <active>0</active>
                 <model>unzerdirect_payment/method_invoice</model>
                 <title>Unzer Invoice</title>
                 <allowspecific>0</allowspecific>
+                <sort_order>2</sort_order>
+                <instructions>Pay 14 days after delivery</instructions>
             </unzerdirect_invoice>
+            <unzerdirect_invoice>
+                <active>0</active>
+                <model>unzerdirect_payment/method_invoice</model>
+                <title>Unzer Invoice</title>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+                <instructions>Pay 14 days after delivery</instructions>
+            </unzerdirect_invoice>
+            <unzerdirect_directdebit>
+                <active>0</active>
+                <model>unzerdirect_payment/method_directdebit</model>
+                <title>Unzer Direct Debit</title>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+                <instructions>Pay directly from your bank account</instructions>
+                <sort_order>3</sort_order>
+            </unzerdirect_directdebit>
         </payment>
     </default>
 </config>

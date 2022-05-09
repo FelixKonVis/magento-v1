@@ -1,5 +1,5 @@
 <?php
-class UnzerDirect_Payment_Block_Payment_Form_Applepay extends Mage_Payment_Block_Form
+class UnzerDirect_Payment_Block_Payment_Form_Directdebit extends Mage_Payment_Block_Form
 {
     /**
      * Instructions text
@@ -35,6 +35,6 @@ class UnzerDirect_Payment_Block_Payment_Form_Applepay extends Mage_Payment_Block
      */
     public function getMethodLabelAfterHtml()
     {
-        return sprintf('<img src="%s" height="20" alt="ApplePay"/>', $this->getSkinUrl('images/unzerdirectpayment/apple-pay.svg'));
+        return sprintf('<img src="%s" height="20" alt="Direct Debit"/>', $this->getSkinUrl('images/unzerdirectpayment/unzer.svg'));
     }
 }

@@ -42,7 +42,7 @@ class UnzerDirect_Payment_Block_Payment_Form extends Mage_Payment_Block_Form
         if (count($cards) > 0) {
             $logoConfig = Mage::getModel('unzerdirect_payment/system_config_source_cardlogos');
             foreach ($cards as $card) {
-                $html .= sprintf('<img src="%s" height="20" alt="%s"/>', $this->getSkinUrl("images/unzerdirectpayment/{$card}.png"), $logoConfig->getFrontendLabel($card));
+                $html .= sprintf('<img src="%s" height="20" alt="%s"/>', $this->getSkinUrl("images/unzerdirectpayment/{$card}.svg"), $logoConfig->getFrontendLabel($card));
            }
         }
 

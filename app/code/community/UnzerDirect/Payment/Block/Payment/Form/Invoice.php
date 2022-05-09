@@ -43,13 +43,14 @@ class UnzerDirect_Payment_Block_Payment_Form_Invoice extends Mage_Payment_Block_
      * @return string
      */
     public function getImageByLang($lang){
-        if($lang){
+        /*if($lang){
             $code = strstr($lang, '_', true);
             if($code == 'de'){
                 return sprintf('<img src="%s" height="20" alt="Unzer Direct Invoice"/>', $this->getSkinUrl('images/unzerdirectpayment/invoice_de.svg'));
             }
         }
 
-        return sprintf('<img src="%s" height="20" alt="Unzer Direct Invoice"/>', $this->getSkinUrl('images/unzerdirectpayment/invoice_en.svg'));
+        return sprintf('<img src="%s" height="20" alt="Unzer Direct Invoice"/>', $this->getSkinUrl('images/unzerdirectpayment/invoice_en.svg'));*/
+        return sprintf('<img src="%s" height="20" alt="Unzer Direct Invoice"/>', $this->getSkinUrl('images/unzerdirectpayment/unzer.svg'));
     }
 }

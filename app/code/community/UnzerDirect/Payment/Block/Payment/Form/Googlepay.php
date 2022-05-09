@@ -35,6 +35,6 @@ class UnzerDirect_Payment_Block_Payment_Form_Googlepay extends Mage_Payment_Bloc
      */
     public function getMethodLabelAfterHtml()
     {
-        return sprintf('<img src="%s" height="20" alt="GooglePay"/>', $this->getSkinUrl('images/unzerdirectpayment/googlepay.png'));
+        return sprintf('<img src="%s" height="20" alt="GooglePay"/>', $this->getSkinUrl('images/unzerdirectpayment/google-pay.svg'));
     }
 }
